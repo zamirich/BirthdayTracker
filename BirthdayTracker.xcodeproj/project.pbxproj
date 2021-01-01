@@ -16,6 +16,7 @@
 		94039950259D3ADC00CC4D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9403994E259D3ADC00CC4D8B /* LaunchScreen.storyboard */; };
 		9403995B259D3ADC00CC4D8B /* BirthdayTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9403995A259D3ADC00CC4D8B /* BirthdayTrackerTests.swift */; };
 		94039966259D3ADC00CC4D8B /* BirthdayTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94039965259D3ADC00CC4D8B /* BirthdayTrackerUITests.swift */; };
+		945750C2259FBBB7006FCF9E /* BirthdayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945750C1259FBBB7006FCF9E /* BirthdayTableViewController.swift */; };
 		94C2DDD4259F984800873850 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2DDD3259F984800873850 /* Birthday.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		94039961259D3ADC00CC4D8B /* BirthdayTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdayTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94039965259D3ADC00CC4D8B /* BirthdayTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTrackerUITests.swift; sourceTree = "<group>"; };
 		94039967259D3ADC00CC4D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945750C1259FBBB7006FCF9E /* BirthdayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewController.swift; sourceTree = "<group>"; };
 		94C2DDD3259F984800873850 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				94039951259D3ADC00CC4D8B /* Info.plist */,
 				94039949259D3ADA00CC4D8B /* BirthdayTracker.xcdatamodeld */,
 				94C2DDD3259F984800873850 /* Birthday.swift */,
+				945750C1259FBBB7006FCF9E /* BirthdayTableViewController.swift */,
 			);
 			path = BirthdayTracker;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945750C2259FBBB7006FCF9E /* BirthdayTableViewController.swift in Sources */,
 				94C2DDD4259F984800873850 /* Birthday.swift in Sources */,
 				94039945259D3ADA00CC4D8B /* AddBirthdayViewController.swift in Sources */,
 				94039941259D3ADA00CC4D8B /* AppDelegate.swift in Sources */,
@@ -447,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B38C32R95;
 				INFOPLIST_FILE = BirthdayTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6B38C32R95;
 				INFOPLIST_FILE = BirthdayTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
