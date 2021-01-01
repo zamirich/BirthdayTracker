@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddBirthdayViewController: UIViewController {
 
+    @IBOutlet var firstNameTextField: UITextField! //this one included manually, other two will link will ctrl + drag
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
