@@ -6,19 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
-protocol AddBirthdayViewControllerDelegate {
-    
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday)
-}
 
 class AddBirthdayViewController: UIViewController {
 
-    @IBOutlet var firstNameTextField: UITextField! //this one included manually, other two will link will ctrl + drag from storyboard
-    @IBOutlet weak var lastNameTextField: UITextField! //this one was connected with ctrl + drag from storyboard
-    @IBOutlet weak var birthdatePicker: UIDatePicker! //ctrl + drag as well
+    @IBOutlet var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var birthdatePicker: UIDatePicker!
     
-    var delegate: AddBirthdayViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +28,28 @@ class AddBirthdayViewController: UIViewController {
         let lastName = lastNameTextField.text ?? ""
         let birthdate = birthdatePicker.date
         
-        let newBirthday = Birthday(firstName: firstName, lastName: lastName, birthdate: birthdate)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        delegate?.addBirthdayViewController(self, didAddBirthday: newBirthday)
-        dismiss(animated: true, completion: nil)
+        let newBirthday = Birthday(context: context)
+        newBirthday.firstName = firstName
+        newBirthday.lastName = lastName
+        newBirthday.birthdate = birthdate
+        newBirthday.birthdayID = UUID().uuidString
+        
+//        if let uniqueID = newBirthday.birthdayID {
+//            print("The birthdayId is \(uniqueID)")
+//        }
+        
+        do {
+            try context.save()
+        } catch let error {
+            print("Could not save because of \(error)")
+        }
+        
     }
+    
+    
     
     @IBAction func cancelTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
